@@ -2,7 +2,7 @@
 /**
  * main - C program that prints a line using a printf function and no puts function allowed
  * Return: 0 (Success)
- * */
+ */
 
 int main(void)
 {
