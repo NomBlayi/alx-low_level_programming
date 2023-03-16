@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - C program that prints a line using a printf function and no puts function allowed
+ * main - C program that prints a line using a printf function not puts
  * Return: 0 (Success)
  */
 
