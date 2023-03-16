@@ -7,11 +7,12 @@
  */
 int main(void);
 {
-	printf("short int is %2d bytes \n", sizeof(short int));
 	printf("char is %2d bytes \n", sizeof(char));
 	printf("int is %2d bytes \n", sizeof(int));
-	printf("long int is %2d bytes \n", sizeof(long int));
-	printf("long long int is %2d bytes \n", sizeof(a long long int));
+	printf("long int is %2ld bytes \n", sizeof(long int));
+	printf("long long int is %ll bytes \n", sizeof(long long int));
 	printf("float is %2d bytes \n", sizeof(float));
+
+	return (0);
 }
 
