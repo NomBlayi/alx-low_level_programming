@@ -8,16 +8,16 @@
 
 void print_number(int n)
 {
-	unsigned int i = j;
+	unsigned int i = n;
 
-	if (j < 0)
+	if (n < 0)
 	{
-	j *= -1;
-	i = j;
+	n *= -1;
+	i = n;
 	_putchar('-');
 	}
 	i /= 10;
 	if (i != 0)
 	print_number(i);
-	_putchar((unsigned int) j % 10 + '0');
+	_putchar((unsigned int) n % 10 + '0');
 }
