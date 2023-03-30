@@ -26,7 +26,7 @@ void rev_string(char *n)
 }
 
 /**
- * infinit_add -  A function that adds two numbers
+ * infinite_add -  A function that adds two numbers
  * @n1: first number to add
  * @n2: second number to add
  * @r: pointer to buffer
