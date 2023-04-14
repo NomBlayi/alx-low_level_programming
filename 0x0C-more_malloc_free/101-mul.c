@@ -3,9 +3,9 @@
 #include "main.h"
 
 int find_len(char*str);
+char *iterate_zeroes(char *str);
 void get_prod(char *prod, char *mult, int digit, int zero);
 void add_num(char *final, char *next, int len);
-char *iterate_zeroes(char *str);
 char *create_xarray(int size);
 /**
  * find_len - A program that finds the length of a string
@@ -32,6 +32,22 @@ char *iterate_zeroes(char *str)
 	str++;
 	return (str);
 }
+/**
+ * get_digit - a program that converts a digi character to a corresponding int
+ * @c: a character to be converted
+ * Return: a converted character
+ */
+int get_digit(char c)
+{
+	int digit = c - '0';
+	if (digit < 0 || digit > 9)
+	{
+	printf("Error\n");
+	exit(98);
+	}
+	return (digit);
+}
+
 /**
  * add_num - A function that adds numbers stored in two strings
  * @final: a buffer
@@ -92,6 +108,46 @@ char *create_xarray(int size)
 	return (array);;
 }
 
+/**
+ * get_prod - A function that multiplies a string of numbers by a single digit
+ * @prod: a buffer to store results
+ * @multi: a string of numbers to be multiplied
+ * @digit: single digit to be multiplied by
+ * @zero: number of leading zeroes
+ * Return: Nothing
+ */
+void get_prod(char *prod, char *mult, int digit, int zero)
+{
+	int multiple, num, tens = 0;
+
+	multiple = len(mult) - 1;
+	mult += multiple;
+	while (*prod)
+	{
+	*prod = 'x';
+	prod++;
+	}
+	prod--;
+	while (zero--)
+	{
+	*prod = '0';
+	prod--;
+	}
+	for (; multiple >= 0; multiple--, mult--, prod--)
+	{
+	if (*mult < '0' || *mult > '9')
+	{
+	printf("Error\n");
+	exit(98);
+	}
+	num = (*mult - '0') * digit;
+	num += tens;
+	*prod = (num % 10) + '0';
+	tens = num / 10;
+	}
+	if (tens)
+	*prod = (tens % 10) += '0';
+}
 
 /**
  * main - A program that multiplies two positive numbers
