@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 size_t looped_listint_len(const listint_t *head);
+
 /**
  * looped_listint_len - A function that counts the number
  * of unique node
@@ -12,8 +13,8 @@ size_t looped_listint_len(const listint_t *head);
  */
 size_t looped_listint_len(const listint_t *head)
 {
-	size_t unique = 1;
 	const listint_t *a, *b;
+	size_t unique = 1;
 
 	if (head == NULL || head->next == NULL)
 	return (0);
