@@ -15,28 +15,19 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	FILE *fname;
-	int sum;
 
-	if (filename == NULL)
+	if (filename == NULL || text_content == NULL)
 	{
 	return (-1);
 	}
-	if (text_content == NULL)
-	{
-	FILE *fname = fopen(filename, "r");
+	fname = fopen(filename, "a");
 	if (fname == NULL)
 	{
 	return (-1);
 	}
+	else{
+	fprintf(fname, "%s", text_content);
 	fclose(fname);
 	return (1);
 	}
-	fname = fopen(filename, "a");
-	sum = fputs(text_content, fname);
-	fclose(fname);
-	if (sum == EOF)
-	{
-	return (-1);
-	}
-	return (1);
 }
